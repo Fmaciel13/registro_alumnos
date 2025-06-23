@@ -1,1 +1,137 @@
-[]
+[
+  {
+    "id": 2,
+    "name": "juanma",
+    "career": "Ciencia de Datos"
+  },
+  {
+    "id": 3,
+    "name": "skaksak",
+    "career": "Ingeniería de Software"
+  },
+  {
+    "id": 5,
+    "name": "dihuen",
+    "career": "sisiis"
+  },
+  {
+    "id": 6,
+    "name": "juan",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 7,
+    "name": "lalalsla",
+    "career": "Ingeniería de Software"
+  },
+  {
+    "id": 8,
+    "name": "enzo",
+    "career": "Ciencia de Datos"
+  },
+  {
+    "id": 9,
+    "name": "pepe",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 10,
+    "name": "julian",
+    "career": "Ciencias de la Computación"
+  },
+  {
+    "id": 11,
+    "name": "ia",
+    "career": "Ingeniería en Sistemas"
+  },
+  {
+    "id": 12,
+    "name": "MACIEL FATIMA",
+    "career": "TECNICATURA"
+  },
+  {
+    "id": 13,
+    "name": "fran",
+    "career": "Biología"
+  },
+  {
+    "id": 14,
+    "name": "fran canggianelli",
+    "career": "Biología"
+  },
+  {
+    "id": 15,
+    "name": "fran canggianelli",
+    "career": "Biología"
+  },
+  {
+    "id": 16,
+    "name": "Fran Canggianelli",
+    "career": "Ingeniería en Informática"
+  },
+  {
+    "id": 17,
+    "name": "Fran Canggianelli",
+    "career": "Tecnicatura en Sistemas"
+  },
+  {
+    "id": 18,
+    "name": "Gonzalez celene",
+    "career": "Desarrollo Web"
+  },
+  {
+    "id": 19,
+    "name": "Perez Juan",
+    "career": "Química"
+  },
+  {
+    "id": 20,
+    "name": "Maria Zapata",
+    "career": "Tecnicatura en Sistemas"
+  },
+  {
+    "id": 21,
+    "name": "maria maciel",
+    "career": "Desarrollo Web"
+  },
+  {
+    "id": 22,
+    "name": "laura",
+    "career": "Biología"
+  },
+  {
+    "id": 23,
+    "name": "Juan Perez",
+    "career": "Tecnicatura"
+  },
+  {
+    "id": 24,
+    "name": "Maciel Fatima",
+    "career": "Tecnicatura Superior en Contabilidad"
+  },
+  {
+    "id": 25,
+    "name": "Nelson Canggianelli",
+    "career": "Tecnicatura"
+  },
+  {
+    "id": 26,
+    "name": "Nelson Canggianelli",
+    "career": "Tecnicatura"
+  },
+  {
+    "id": 27,
+    "name": "Nelson Canggianelli",
+    "career": "Tecnicatura"
+  },
+  {
+    "id": 28,
+    "name": "Maria Ruiz",
+    "career": "Tecnicatura Superior en Contabilidad"
+  },
+  {
+    "id": 29,
+    "name": "Fatima Mabel",
+    "career": "Profesorado en Economia"
+  }
+]

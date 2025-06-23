@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Carrera test"
+  },
+  {
+    "id": 2,
+    "name": "Ciencias de datos"
+  },
+  {
+    "id": 4,
+    "name": "Informática"
+  },
+  {
+    "id": 5,
+    "name": "Educación"
+  },
+  {
+    "id": 6,
+    "name": "Contabilidad"
+  },
+  {
+    "id": 7,
+    "name": "Salud"
+  }
+]
