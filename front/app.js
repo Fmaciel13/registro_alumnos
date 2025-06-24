@@ -1,97 +1,107 @@
+// 1. Constantes y configuración
+
 const API_STUDENTS_URL = "http://localhost:5001/api/students";
 const API_CAREERS_URL = "http://localhost:5001/api/careers";
 const API_CATEGORIES_URL = "http://localhost:5001/api/categories";
 const API_KEY = "12345ABCDEF";
 
-// Headers comunes para todas las peticiones
 const headers = {
     "Content-Type": "application/json",
     "Authorization": `Bearer ${API_KEY}`
 };
 
-// Funciones de servicio que retornan Promesas
+// 2. Servicios de estudiantes (API) -
+// Registra un nuevo estudiante enviando nombre y carrera al backend.
+// Obtiene un estudiante por su ID desde el backend.
+// Obtiene todos los estudiantes de una carrera específica.
+// Elimina un estudiante por su ID.
+
+
 async function registerStudentService(name, career) {
-    const response = await fetch(API_STUDENTS_URL, {
+     const response = await fetch(API_STUDENTS_URL, {
         method: "POST",
         headers,
         body: JSON.stringify({ name, career })
     });
-    return response.json();
-}
-
-async function getStudentByIdService(id) {
+    return response.json(); }
+async function getStudentByIdService(id) { 
     const response = await fetch(`${API_STUDENTS_URL}/${id}`, {
         method: "GET",
         headers
     });
     return response.json();
-}
-
-async function getStudentsByCareerService(career) {
+ }
+async function getStudentsByCareerService(career) { 
     const response = await fetch(`${API_STUDENTS_URL}?career=${career}`, {
         method: "GET",
         headers
     });
     return response.json();
-}
-
-async function deleteStudentService(id) {
+ }
+async function deleteStudentService(id) { 
     const response = await fetch(`${API_STUDENTS_URL}/${id}`, {
         method: "DELETE",
         headers
     });
     return response.json();
-}
+ }
 
-// ---------------- SERVICIOS DE CARRERAS ------------------
+// 3. Servicios de carreras (API)
+// Registra una nueva carrera en el sistema.
+// Busca una carrera por su nombre.
+// Elimina una carrera por su ID.   
 
-async function registerCareerService(name) {
+
+async function registerCareerService(name) { 
     const response = await fetch(`${API_CAREERS_URL}`, {  
         method: "POST",
         headers,
         body: JSON.stringify({ name })
     });
     return response.json();
-}
-
-async function getCareerByNameService(name) {
+ }
+async function getCareerByNameService(name) { 
     const response = await fetch(`${API_CAREERS_URL}?name=${encodeURIComponent(name)}`, {
         method: "GET",
         headers
     });
     return response.json();
-}
-
-async function deleteCareerService(id) {
+ }
+async function deleteCareerService(id) { 
     const response = await fetch(`${API_CAREERS_URL}/${id}`, {
         method: "DELETE",
         headers
     });
     return response.json();
-}
+ }
 
-// ---------------- SERVICIOS DE CATEGORIAS ------------------
+// 4. Servicios de categorías (API)
+// Registra una nueva categoría en el sistema.
+// Busca una categoría por su nombre.
 
-async function registerCategoryService(name) {
+async function registerCategoryService(name) { 
     const response = await fetch(`${API_CATEGORIES_URL}`, {
         method: "POST",
         headers,
         body: JSON.stringify({ name })
     });
     return response.json();
-}
-
-async function getCategoryByNameService(name) {
-    const response = await fetch(`${API_CATEGORIES_URL}?name=${encodeURIComponent(name)}`, {
+ }
+async function getCategoryByNameService(name) { const response = await fetch(`${API_CATEGORIES_URL}?name=${encodeURIComponent(name)}`, {
         method: "GET",
         headers
     });
-    return response.json();
-}
+    return response.json(); }
 
-// Funciones que manejan eventos de la interfaz
 
-async function registerStudent() {
+// 5. Funciones de interfaz - Estudiantes
+// Toma los datos del formulario y registra un estudiante.
+// Consulta y muestra un estudiante por su ID.
+// Consulta y muestra todos los estudiantes de una carrera.
+// Elimina un estudiante por su ID y muestra el resultado.
+
+
+async function registerStudent() { 
     const name = document.getElementById('registerName').value.trim();
     const career = document.getElementById('registerCareer').value.trim();
     const resultContainer = document.getElementById('registerResult');
@@ -131,9 +141,8 @@ async function registerStudent() {
         console.error("Error registering student:", error);
         resultContainer.textContent = "Failed to register student.";
     }
-}
-// Llama al servicio para obtener un estudiante por ID
-async function getStudentById() {
+ }
+async function getStudentById() { 
     const id = document.getElementById('studentId').value.trim();
 
     if (!id) {
@@ -157,13 +166,12 @@ async function getStudentById() {
                 <strong>Career:</strong> ${student.career}
             `;
         }
-    } catch (error) {
+        } catch (error) {
         console.error("Error fetching student:", error);
         document.getElementById('getResult').textContent = "No se puede obtener el estudiante.";
     }
-}
-
-async function getStudentsByCareer() {
+ }
+async function getStudentsByCareer() {  
     const career = document.getElementById('careerFilter').value.trim();
 
     if (!career) {
@@ -183,11 +191,10 @@ async function getStudentsByCareer() {
             resultContainer.textContent = "No se encontraron estudiantes para esa carrera.";
             return;
         }
-
-        // Limpiar resultados anteriores
+    // Limpiar resultados anteriores
         resultContainer.innerHTML = '';
 
-        // Usamos forEach para recorrer y construir el HTML manualmente
+    // Muestra cada estudiante en una tarjeta
         students.forEach(student => {
             const studentDiv = document.createElement('div');
             studentDiv.classList.add('student-card');
@@ -198,7 +205,7 @@ async function getStudentsByCareer() {
             `;
             resultContainer.appendChild(studentDiv);
 
-            // Separador entre tarjetas (opcional)
+    // Separador entre tarjetas (opcional)
             const hr = document.createElement('hr');
             resultContainer.appendChild(hr);
         });
@@ -208,9 +215,9 @@ async function getStudentsByCareer() {
         document.getElementById('careerResult').textContent = "Failed to fetch students.";
     }
 }
-// Llamma al servicio para eliminar en estudiante por ID
-async function deleteStudent() {
-    const id = document.getElementById('deleteId').value.trim();
+
+async function deleteStudent() { 
+const id = document.getElementById('deleteId').value.trim();
 
     if (!id) {
         Swal.fire({
@@ -228,12 +235,17 @@ async function deleteStudent() {
         console.error("Error al eliminar estudiante:", error);
         document.getElementById('deleteResult').textContent = "No se pudo eliminar al estudiante";
     }
-}
+ }
+
+// 6. Funciones de interfaz - Carreras
+// Registra una nueva carrera desde el formulario.
+// Elimina una carrera por su ID y muestra el resultado.
+// Carga las carreras disponibles en el <select> del formulario de registro de estudiantes.
+// Carga la tabla de carreras en la interfaz.
 
 
-// Función para agregar carrera
-async function registerCareer() {
-    const name = document.getElementById('careerName').value.trim();
+async function registerCareer() { 
+const name = document.getElementById('careerName').value.trim();
     const resultContainer = document.getElementById('careerRegisterResult');
 
     if (!name) {
@@ -269,10 +281,10 @@ async function registerCareer() {
         console.error("Error registrando carrera:", error);
         resultContainer.textContent = "No se pudo registrar la carrera.";
     }
-}
-//Funcion para eliminar Carrera
-async function eliminarCarrera(id) {
-    try {
+ }
+
+async function eliminarCarrera(id) { 
+ try {
         const result = await deleteCareerService(id);
         if (result.error) {
             Swal.fire({
@@ -296,10 +308,68 @@ async function eliminarCarrera(id) {
             text: 'No se pudo eliminar la carrera.'
         });
     }
-}
+ }
 
-// Función para agregar Categorías
-async function registerCategory() {
+async function cargarCarrerasEnSelect() { 
+    const select = document.getElementById('careerSelect');
+    if (!select) return;
+
+    // Limpia el select y agrega la opción por defecto
+    select.innerHTML = '<option value="">Selecciona una carrera</option>';
+
+    try {
+        const response = await fetch(API_CAREERS_URL, { headers });
+        const carreras = await response.json();
+
+        carreras.forEach(carrera => {
+            const option = document.createElement('option');
+            option.value = carrera.name;
+            option.textContent = carrera.name;
+            select.appendChild(option);
+        });
+    } catch (error) {
+        console.error("Error cargando carreras:", error);
+    }
+
+    // Sincroniza el campo oculto al cambiar
+    select.onchange = function() {
+        document.getElementById('registerCareer').value = this.value;
+    };
+ }
+async function cargarTablaCarreras() { 
+    const tableBody = document.getElementById('careerTableBody');
+    if (!tableBody) return;
+
+    // Limpia la tabla
+    tableBody.innerHTML = '';
+
+    try {
+        const response = await fetch(API_CAREERS_URL, { headers });
+        const carreras = await response.json();
+        console.log("Carreras obtenidas:", carreras);
+        carreras.forEach(carrera => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${carrera.id}</td>
+                <td>${carrera.name}</td>
+                <td>
+                    <button class="btn btn-danger" onclick="eliminarCarrera(${carrera.id})">Eliminar</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error("Error cargando carreras:", error);
+    }
+ }
+
+// 7. Funciones de interfaz - Categorías
+// Registra una nueva categoría desde el formulario.
+// Carga las categorías disponibles en el <select> del formulario de registro de estudiantes.   
+// Carga la tabla de categorías en la interfaz.
+// Elimina una categoría por su ID y muestra el resultado.
+
+async function registerCategory() { 
     const name = document.getElementById('categoryName').value.trim();
     const resultContainer = document.getElementById('categoryRegisterResult');
 
@@ -335,7 +405,7 @@ async function registerCategory() {
             title: '¡Categoría registrada!',
             text: 'La categoría fue agregada exitosamente.'
         });
-        resultContainer.textContent = "";
+            resultContainer.textContent = "";
         document.getElementById('categoryName').value = '';
         // Si tienes una tabla/lista de categorías, recárgala aquí:
         // cargarTablaCategorias();
@@ -343,75 +413,8 @@ async function registerCategory() {
         console.error("Error registrando categoría:", error);
         resultContainer.textContent = "No se pudo registrar la categoría.";
     }
-}
-
-
-// menú de carreras se llene automáticamente con las carreras de tu backend
-async function cargarCarrerasEnSelect() {
-    const select = document.getElementById('careerSelect');
-    if (!select) return;
-
-    // Limpia el select y agrega la opción por defecto
-    select.innerHTML = '<option value="">Selecciona una carrera</option>';
-
-    try {
-        const response = await fetch(API_CAREERS_URL, { headers });
-        const carreras = await response.json();
-
-        carreras.forEach(carrera => {
-            const option = document.createElement('option');
-            option.value = carrera.name;
-            option.textContent = carrera.name;
-            select.appendChild(option);
-        });
-    } catch (error) {
-        console.error("Error cargando carreras:", error);
-    }
-
-    // Sincroniza el campo oculto al cambiar
-    select.onchange = function() {
-        document.getElementById('registerCareer').value = this.value;
-    };
-}
-
-async function cargarTablaCarreras() {
-    const tableBody = document.getElementById('careerTableBody');
-    if (!tableBody) return;
-
-    // Limpia la tabla
-    tableBody.innerHTML = '';
-
-    try {
-        const response = await fetch(API_CAREERS_URL, { headers });
-        const carreras = await response.json();
-        console.log("Carreras obtenidas:", carreras);
-        carreras.forEach(carrera => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${carrera.id}</td>
-                <td>${carrera.name}</td>
-                <td>
-                    <button class="btn btn-danger" onclick="eliminarCarrera(${carrera.id})">Eliminar</button>
-                </td>
-            `;
-            tableBody.appendChild(row);
-        });
-    } catch (error) {
-        console.error("Error cargando carreras:", error);
-    }
-}
-
-//Evento para escuchar carga del DOM
-document.addEventListener('DOMContentLoaded', async () => {
-    // Cargar carreras en el select al iniciar
-    await cargarCarrerasEnSelect();
-
-    await cargarTablaCarreras();
-    
-})
-
-// Cargar categorías en un <select>
-async function cargarCategoriasEnSelect() {
+ }
+async function cargarCategoriasEnSelect() { 
     const select = document.getElementById('categorySelect');
     if (!select) return;
 
@@ -437,10 +440,8 @@ async function cargarCategoriasEnSelect() {
         const hidden = document.getElementById('registerCategory');
         if (hidden) hidden.value = this.value;
     };
-}
-
-// Cargar tabla de categorías
-async function cargarTablaCategorias() {
+ }
+async function cargarTablaCategorias() { 
     const tableBody = document.getElementById('categoryTableBody');
     if (!tableBody) return;
 
@@ -464,10 +465,9 @@ async function cargarTablaCategorias() {
     } catch (error) {
         console.error("Error cargando categorías:", error);
     }
-}
+ }
 
-// Eliminar categoría
-async function eliminarCategoria(id) {
+async function eliminarCategoria(id) { 
     try {
         const response = await fetch(`${API_CATEGORIES_URL}/${id}`, {
             method: "DELETE",
@@ -495,10 +495,33 @@ async function eliminarCategoria(id) {
             text: 'No se pudo eliminar la categoría.'
         });
     }
-}
+ }
 
-// Evento para escuchar carga del DOM (si solo usas categorías en la página)
+// 8. Eventos de carga de DOM
+// Evento para cargar carreras al iniciar la página.
+// Evento para cargar categorías al iniciar la página.
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await cargarCarrerasEnSelect();
+    await cargarTablaCarreras();
+});
 document.addEventListener('DOMContentLoaded', async () => {
     await cargarCategoriasEnSelect();
     await cargarTablaCategorias();
 });
+
+
+
+/* 
+-----------------------------------------------------------
+RESUMEN DEL FLUJO DE LA APLICACIÓN
+
+- El usuario puede registrar, consultar y eliminar estudiantes, carreras y categorías.
+- Cada acción en la interfaz llama a una función que se comunica con el backend usando fetch y muestra los resultados en pantalla.
+- Al cargar la página, se inicializan los select y tablas con los datos actuales del backend.
+- Se utilizan alertas (SweetAlert2) para informar al usuario sobre el éxito o error de las operaciones.
+- El código está organizado en funciones de servicio (API) y funciones de interfaz (UI) para mayor claridad y mantenimiento.
+
+-----------------------------------------------------------
+*/

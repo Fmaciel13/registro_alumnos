@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+<!-- Navbar -->
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="#">
@@ -22,13 +25,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          <a class="nav-link " aria-current="page" href="./index.html">Home</a>
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./students.html">Estudiantes</a>
-        </li>
+          <a class="nav-link " aria-current="page" href="./students.html">Estudiantes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./carreras.html">Carreras </a>
+          <a class="nav-link active" href="./carreras.html">Carreras </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="categorias.html">Categorias</a>
@@ -38,9 +40,10 @@
   </div>
 </nav>
 <div class="container py-5">
-  <h1 class="text-center mb-4">Gestión de Carreras</h1>
+<h1 class="text-center mb-4">Gestión de Carreras</h1>
 
 <!-- Formulario de ingreso -->
+
 <div class="card-dark">
   <h2 class="mb-3">Nueva Carrera</h2>
   <div class="row g-3 mb-3">
@@ -52,7 +55,7 @@
         
         <select id="categorySelect" class="form-select">
           <option value="">Selecciona una categoría</option>
-          <!-- Las categorías se cargarán aquí dinámicamente -->
+        <!-- Las categorías se cargarán aquí dinámicamente -->
         </select>
         <button class= "btn btn-primary" type="button" onclick="cargarCategoriasEnSelect()" title="Actualizar categorías">
         </button>
@@ -63,7 +66,8 @@
   <pre id="careerRegisterResult" class="mt-2"></pre>
 </div>
 
-  <!-- Tabla de carreras -->
+<!-- Tabla de carreras -->
+
   <div class="card-dark">
     <h2 class="mb-3">Listado de Carreras</h2>
     <table class="table table-dark table-striped table-dark-custom">
@@ -72,11 +76,11 @@
           <th>ID</th>
           <th>Carrera</th>
           <th>Accion</th>
-    
         </tr>
       </thead>
       <tbody id="careerTableBody">
         <!-- Las carreras se agregarán aquí -->
+
       </tbody>
     </table>
   </div>
