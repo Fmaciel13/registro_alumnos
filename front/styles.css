@@ -1,0 +1,100 @@
+
+/* Utilizado en el formulario para creacion de carreras */
+
+.custom-select-wrapper {
+  position: relative;
+}
+
+.custom-select-bootstrap {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  padding: 0.375rem 2.5rem 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  width: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+/*Estilo de NAV*/
+.card-hover {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Aumenta el alto del navbar */
+.navbar {
+  min-height: 100px;
+}
+
+/* Aumenta el tamaño del logo */
+.navbar-brand img {
+  height: 85px !important;
+  width: 85px !important;
+  object-fit: cover;
+}
+
+/* Centra verticalmente el contenido del navbar */
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+
+/* Fondo universitario sobrio */
+body {
+  background: linear-gradient(to bottom right, #1e2a38, #34495e);
+  color: #f8f9fa; /* Texto claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo para las tarjetas con efecto hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 transparent;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes visuales adicionales */
+.card-title {
+  color: #0e0d0e;
+}
+
+.card-text {
+  color: #0e0d0d;
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+footer {
+  border-top: 1px solid #444;
+}
+
+
+
+
+
+

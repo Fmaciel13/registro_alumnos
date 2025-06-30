@@ -1,0 +1,83 @@
+Trabajo Práctico 1 - Tecnología de Programación y Lógica Computacional.
+
+* Uso de Inteligencia Artificial en el Desarrollo del Proyecto
+
+
+- Modelo utilizado 1:
+🔹 ChatGPT (modelo GPT-4o de OpenAI)
+
+# Rol del modelo de IA en el proyecto:
+
+1. El modelo fue utilizado para acelerar y mejorar las siguientes etapas del desarrollo:
+
+2. Planificación y diseño de la estructura del proyecto.
+
+3. Asistencia en la creación de funciones JavaScript complejas para el manejo de datos.
+
+4. Generación de ejemplos de código para conectarse a la API y manipular archivos JSON.
+
+5. Optimización del código para registro, consulta, edición y eliminación de entidades.
+
+6. Redacción de textos institucionales y mensajes para el usuario.
+
+7. Sugerencias de diseño para mejorar la interfaz de usuario (con Bootstrap 5).
+
+
+## Prompts que generaron mejores resultados:
+
+🔸 "Generá una función en JavaScript para registrar un alumno usando fetch a una API local que guarda datos en JSON."
+
+🔸 "Dame un ejemplo de cómo armar un menú desplegable con los nombres de carreras obtenidos desde una API."
+
+🔸 "Escribime un texto institucional breve para una página de inicio de un instituto educativo ficticio."
+
+🔸 "Mostrame cómo usar SweetAlert (swal) para mostrar mensajes de confirmación al eliminar un estudiante."
+
+🔸 "Cómo estructurar un proyecto web para correrlo con XAMPP, con una API que usa archivos JSON como base de datos."
+
+
+-------------------------------------------------------------------------------------------------
+
+- Modelo utilizado 2:
+
+🔹 GitHub Copilot (basado en modelos GPT de OpenAI)
+
+
+
+## Rol del modelo de IA en el proyecto:
+
+El modelo GitHub Copilot fue utilizado para optimizar y acelerar el desarrollo del trabajo práctico, especialmente en:
+
+1. Sugerencia y autocompletado de funciones JavaScript para la gestión de estudiantes, carreras y categorías.
+
+2. Generación de ejemplos de código para consumir la API provista usando `fetch`.
+
+3. Propuestas de estructura para archivos `app.js` y `styles.css`.
+
+4. Corrección y mejora de funciones existentes para manejo de errores y validaciones.
+
+5. Sugerencias de integración con Bootstrap 5 y SweetAlert para mejorar la experiencia de usuario.
+
+6. Generación de comentarios explicativos y resúmenes de flujo en el código
+
+
+## Prompts y comentarios utilizados con mejores resultados:
+
+🔸 Generar función para registrar un alumno usando fetch
+
+🔸 Crear función para eliminar estudiante por ID
+
+🔸 Sugerir estructura de tabla para mostrar todas las carreras
+
+🔸 Agregar validación de campos obligatorios en formulario
+
+🔸 Mostrar mensaje de éxito con SweetAlert al registrar
+
+🔸 Explicar el flujo general de la aplicación en comentarios
+
+🔸 Autocompletar función para cargar categorías en un select
+
+🔸 Mejorar el manejo de errores en las peticiones fetch
+
+
+--------------------------------------------------------------------------------------------------
