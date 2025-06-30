@@ -409,6 +409,9 @@ async function registerCategory() {
         document.getElementById('categoryName').value = '';
         // Si tienes una tabla/lista de categorías, recárgala aquí:
         // cargarTablaCategorias();
+
+        await cargarTablaCategorias(); // Refresca la tabla de categorías
+
     } catch (error) {
         console.error("Error registrando categoría:", error);
         resultContainer.textContent = "No se pudo registrar la categoría.";
